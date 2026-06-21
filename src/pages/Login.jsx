@@ -16,7 +16,8 @@ function Login() {
       password === "admin123"
     ) {
       setError("");
-      navigate("/dashboard");
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/");
     } else {
       setError("Invalid Email or Password");
     }
@@ -35,7 +36,7 @@ function Login() {
       <div
         style={{
           width: "420px",
-          background: "#ffffff",
+          background: "#fff",
           padding: "40px",
           borderRadius: "20px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
@@ -70,7 +71,6 @@ function Login() {
               display: "block",
               fontWeight: "600",
               marginBottom: "8px",
-              color: "#111827",
             }}
           >
             Email
@@ -97,7 +97,6 @@ function Login() {
               display: "block",
               fontWeight: "600",
               marginBottom: "8px",
-              color: "#111827",
             }}
           >
             Password
@@ -125,7 +124,6 @@ function Login() {
                 color: "red",
                 textAlign: "center",
                 marginBottom: "15px",
-                fontSize: "14px",
               }}
             >
               {error}
@@ -138,7 +136,7 @@ function Login() {
               width: "100%",
               padding: "14px",
               background: "#6366f1",
-              color: "#ffffff",
+              color: "white",
               border: "none",
               borderRadius: "8px",
               fontSize: "16px",
