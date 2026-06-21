@@ -4,41 +4,65 @@ function Sidebar() {
   return (
     <div
       style={{
-        width: "220px",
+        width: "240px",
         background: "#1e293b",
         color: "white",
         minHeight: "100vh",
         padding: "20px",
+        boxSizing: "border-box",
       }}
     >
-      <h3>Menu</h3>
+      <h2
+        style={{
+          textAlign: "center",
+          marginBottom: "30px",
+          borderBottom: "1px solid #334155",
+          paddingBottom: "15px",
+        }}
+      >
+        Referral App
+      </h2>
 
-      <p>
+      <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
         <Link
           to="/"
-          style={{ color: "white", textDecoration: "none" }}
+          style={{
+            color: "white",
+            textDecoration: "none",
+            padding: "12px",
+            borderRadius: "8px",
+            background: "#334155",
+          }}
         >
-          Dashboard
+          📊 Dashboard
         </Link>
-      </p>
 
-      <p>
         <Link
           to="/referrals/1"
-          style={{ color: "white", textDecoration: "none" }}
+          style={{
+            color: "white",
+            textDecoration: "none",
+            padding: "12px",
+            borderRadius: "8px",
+            background: "#334155",
+          }}
         >
-          Referrals
+          👥 Referrals
         </Link>
-      </p>
 
-      <p>
         <Link
           to="/login"
-          style={{ color: "white", textDecoration: "none" }}
+          style={{
+            color: "white",
+            textDecoration: "none",
+            padding: "12px",
+            borderRadius: "8px",
+            background: "#334155",
+          }}
         >
-          Profile
+          👤 Profile
         </Link>
-      </p>
+      </div>
     </div>
   );
 }
