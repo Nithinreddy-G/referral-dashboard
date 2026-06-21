@@ -11,47 +11,84 @@ function Login() {
   return (
     <div
       style={{
+        minHeight: "100vh",
+        background: "#f5f5fb",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        background: "#f5f5fb",
       }}
     >
       <div
         style={{
+          width: "380px",
           background: "white",
-          padding: "40px",
-          borderRadius: "16px",
-          width: "350px",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          padding: "35px",
+          borderRadius: "20px",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
         }}
       >
-        <h1 style={{ color: "#6366f1" }}>Go Business</h1>
+        <h1
+          style={{
+            color: "#6366f1",
+            marginBottom: "10px",
+            fontSize: "52px",
+          }}
+        >
+          Go Business
+        </h1>
 
-        <p style={{ color: "#666" }}>
+        <p
+          style={{
+            color: "#6b7280",
+            marginBottom: "30px",
+          }}
+        >
           Sign in to open your referral dashboard.
         </p>
 
-        <h4>Email</h4>
+        <label
+          style={{
+            display: "block",
+            marginBottom: "8px",
+            fontWeight: "600",
+          }}
+        >
+          Email
+        </label>
+
         <input
           type="email"
           placeholder="you@example.com"
           style={{
             width: "100%",
-            padding: "10px",
-            marginBottom: "15px",
+            padding: "12px",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
+            marginBottom: "20px",
+            boxSizing: "border-box",
           }}
         />
 
-        <h4>Password</h4>
+        <label
+          style={{
+            display: "block",
+            marginBottom: "8px",
+            fontWeight: "600",
+          }}
+        >
+          Password
+        </label>
+
         <input
           type="password"
-          placeholder="********"
+          placeholder="••••••••"
           style={{
             width: "100%",
-            padding: "10px",
+            padding: "12px",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
             marginBottom: "20px",
+            boxSizing: "border-box",
           }}
         />
 
@@ -59,15 +96,16 @@ function Login() {
           onClick={handleLogin}
           style={{
             width: "100%",
-            padding: "12px",
+            padding: "14px",
             background: "#6366f1",
             color: "white",
             border: "none",
             borderRadius: "8px",
+            fontWeight: "600",
             cursor: "pointer",
           }}
         >
-          Sign In
+          Sign in
         </button>
       </div>
     </div>
