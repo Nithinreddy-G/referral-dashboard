@@ -2,216 +2,190 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
 function Dashboard() {
-  const referrals = [
-    {
-      id: 1,
-      name: "John Doe",
-      position: "Frontend Developer",
-      status: "Pending",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      position: "React Developer",
-      status: "Hired",
-    },
-    {
-      id: 3,
-      name: "David Johnson",
-      position: "UI Developer",
-      status: "Interview",
-    },
-  ];
+const referrals = [
+{
+id: 1,
+name: "Nithin",
+position: "Frontend Developer",
+status: "Pending",
+},
+{
+id: 2,
+name: "Bhavya Sree",
+position: "React Developer",
+status: "Hired",
+},
+{
+id: 3,
+name: "Akhil Reddy",
+position: "UI Developer",
+status: "Interview",
+},
+];
 
-  return (
-    <>
-      <Navbar />
+return (
+<> <Navbar />
 
-      <div style={{ display: "flex" }}>
-        <Sidebar />
+```
+  <div style={{ display: "flex" }}>
+    <Sidebar />
 
-        <div
+    <div
+      style={{
+        flex: 1,
+        padding: "30px",
+        background: "#f5f5fb",
+        minHeight: "100vh",
+      }}
+    >
+      <div style={{ marginBottom: "30px" }}>
+        <h1
           style={{
-            flex: 1,
-            padding: "30px",
-            background: "#f5f5fb",
-            minHeight: "100vh",
+            fontSize: "48px",
+            marginBottom: "10px",
+            color: "#1e293b",
           }}
         >
-          <div style={{ marginBottom: "25px" }}>
-            <h1
-              style={{
-                fontSize: "50px",
-                marginBottom: "10px",
-                color: "#1e293b",
-              }}
-            >
-              Referral Dashboard
-            </h1>
+          Referral Dashboard
+        </h1>
 
-            <p
-              style={{
-                color: "#64748b",
-                fontSize: "16px",
-              }}
-            >
-              Track your referrals, earnings and partner activity in one place.
-            </p>
-          </div>
+        <p
+          style={{
+            color: "#64748b",
+            fontSize: "16px",
+          }}
+        >
+          Track your referrals, earnings and partner activity in one place.
+        </p>
+      </div>
 
-          {/* Cards */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "20px",
+          marginBottom: "30px",
+        }}
+      >
+        {[
+          ["Total Referrals", "120"],
+          ["Pending", "40"],
+          ["Hired", "25"],
+          ["Total Earnings", "$534"],
+        ].map(([title, value]) => (
           <div
+            key={title}
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px",
-              marginBottom: "30px",
+              background: "white",
+              padding: "25px",
+              borderRadius: "16px",
+              boxShadow:
+                "0 4px 15px rgba(0,0,0,0.08)",
             }}
           >
-            <div
-              style={{
-                background: "white",
-                padding: "25px",
-                borderRadius: "16px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                width: "220px",
-              }}
-            >
-              <h3>Total Referrals</h3>
-              <h1>120</h1>
-            </div>
-
-            <div
-             style={{
-                background: "white",
-                padding: "25px",
-                borderRadius: "16px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                width: "220px"
-              }}
-            >
-              <h3>Pending</h3>
-              <h1>40</h1>
-            </div>
-
-            <div
-              style={{
-                background: "white",
-                padding: "25px",
-                borderRadius: "16px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                width: "220px"
-              }}
-            >
-              <h3>Hired</h3>
-              <h1>25</h1>
-            </div>
-
-            <div
-              style={{
-                background: "white",
-                padding: "25px",
-                borderRadius: "16px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                width: "220px"
-              }}
-            >
-              <h3>Total Earnings</h3>
-              <h1>$534</h1>
-            </div>
+            <h3>{title}</h3>
+            <h1>{value}</h1>
           </div>
+        ))}
+      </div>
 
-          {/* Referral Table */}
-          <div
-            style={{
-                background: "white",
-                padding: "25px",
-                borderRadius: "16px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-            }}
-          >
-            <h2
+      <div
+        style={{
+          background: "white",
+          padding: "25px",
+          borderRadius: "16px",
+          boxShadow:
+            "0 4px 15px rgba(0,0,0,0.08)",
+        }}
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
+          Referral List
+        </h2>
+
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+          }}
+        >
+          <thead>
+            <tr
               style={{
-                textAlign: "center",
-                marginBottom: "20px",
+                background: "#6366f1",
+                color: "white",
               }}
             >
-              Referral List
-            </h2>
+              <th style={{ padding: "14px" }}>ID</th>
+              <th>Name</th>
+              <th>Candidate</th>
+              <th>Position</th>
+              <th>Status</th>
+            </tr>
+          </thead>
 
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "collapse",
-              }}
-            >
-              <thead>
-                <tr
+          <tbody>
+            {referrals.map((item) => (
+              <tr key={item.id}>
+                <td
                   style={{
-                    background: "#6366f1",
-                    color: "white",
+                    padding: "14px",
+                    borderBottom:
+                      "1px solid #e5e7eb",
                   }}
                 >
-                  <th style={{ padding: "14px" }}>ID</th>
-                  <th>Name</th>
-                  <th>Candidate</th>
-                  <th>Position</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
+                  {item.id}
+                </td>
 
-              <tbody>
-                {referrals.map((item) => (
-                  <tr key={item.id}>
-                    <td
-                      style={{
-                        padding: "14px",
-                        borderBottom: "1px solid #e5e7eb",
-                      }}
-                    >
-                      {item.id}
-                    </td>
+                <td
+                  style={{
+                    borderBottom:
+                      "1px solid #e5e7eb",
+                  }}
+                >
+                  {item.name}
+                </td>
 
-                    <td
-                      style={{
-                        borderBottom: "1px solid #e5e7eb",
-                      }}
-                    >
-                      {item.name}
-                    </td>
+                <td
+                  style={{
+                    borderBottom:
+                      "1px solid #e5e7eb",
+                  }}
+                >
+                  Candidate {item.id}
+                </td>
 
-                    <td
-                      style={{
-                        borderBottom: "1px solid #e5e7eb",
-                      }}
-                    >
-                      Candidate {item.id}
-                    </td>
+                <td
+                  style={{
+                    borderBottom:
+                      "1px solid #e5e7eb",
+                  }}
+                >
+                  {item.position}
+                </td>
 
-                    <td
-                      style={{
-                        borderBottom: "1px solid #e5e7eb",
-                      }}
-                    >
-                      {item.position}
-                    </td>
-
-                    <td
-                      style={{
-                        borderBottom: "1px solid #e5e7eb",
-                      }}
-                    >
-                      {item.status}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                <td
+                  style={{
+                    borderBottom:
+                      "1px solid #e5e7eb",
+                  }}
+                >
+                  {item.status}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </>
-  );
+    </div>
+  </div>
+</>
+);
 }
 
 export default Dashboard;
