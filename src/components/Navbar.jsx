@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
@@ -11,31 +11,45 @@ function Navbar() {
   return (
     <div
       style={{
+        background: "white",
         height: "70px",
-        background: "#2563eb",
-        color: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "0 20px",
+        padding: "0 40px",
+        borderBottom: "1px solid #eee",
       }}
     >
-      <h2>Referral Dashboard</h2>
+      <h2 style={{ color: "#6366f1" }}>
+        Go Business
+      </h2>
 
-      <button
-        onClick={handleLogout}
-        style={{
-          padding: "8px 15px",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer",
-          background: "white",
-          color: "#2563eb",
-          fontWeight: "bold",
-        }}
-      >
-        Logout
-      </button>
+      <div>
+        <button
+          style={{
+            background: "#6366f1",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "20px",
+            marginRight: "10px",
+          }}
+        >
+          Try for free
+        </button>
+
+        <button
+          onClick={logout}
+          style={{
+            background: "white",
+            border: "1px solid #ddd",
+            padding: "10px 20px",
+            borderRadius: "20px",
+          }}
+        >
+          Log out
+        </button>
+      </div>
     </div>
   );
 }
